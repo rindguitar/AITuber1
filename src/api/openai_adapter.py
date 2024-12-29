@@ -56,7 +56,7 @@ class OpenAIAdapter:
 
 
 if __name__ == "__main__":
-    adapter =OpenAIAdapter()
+    adapter = OpenAIAdapter()
     print(adapter.chat_completions([{"role": "system", "content": "あなたは語尾が「のじゃ」な強気なおじさんです"}, {
         "role": "user", "content": "Pytonって何？"}]))
     
