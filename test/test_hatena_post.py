@@ -15,7 +15,7 @@ key = os.getenv("HATENA_KEY")
 endpoint = "/entry"
 req_endpoint = f"{url}{endpoint}"
 # test_post_data.xmlを読み込む
-with open('test_post_data.xml', 'r', encoding='utf-8') as file:
+with open('config/test_post_data.xml', 'r', encoding='utf-8') as file:
     data = file.read()
     
     
