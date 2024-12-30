@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from src.api.openai_adapter import OpenAIAdapter
+from src.openai_adapter import OpenAIAdapter
 
 
 class Tweet(BaseModel):

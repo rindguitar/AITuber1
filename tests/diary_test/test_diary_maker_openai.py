@@ -1,4 +1,4 @@
-from src.api.openai_adapter import OpenAIAdapter
+from openai_adapter import OpenAIAdapter
 
 adapter = OpenAIAdapter()
 

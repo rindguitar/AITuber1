@@ -1,6 +1,6 @@
 import random
 from pydantic import BaseModel
-from src.api.openai_adapter import OpenAIAdapter
+from openai_adapter import OpenAIAdapter
 
 
 class Tweet(BaseModel):
