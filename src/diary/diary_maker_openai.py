@@ -1,9 +1,13 @@
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+
 from daily_things_maker import DailyThingsMaker
-from openai_adapter import OpenAIAdapter
+from api.openai_adapter import OpenAIAdapter
 
 adapter = OpenAIAdapter()
 
-with open("storage/diary_maker_prompt.txt", "r", encoding="utf-8") as f:
+with open("docs/diary_maker_prompt.txt", "r", encoding="utf-8") as f:
     system_prompt = f.read()
     
 daily_things = DailyThingsMaker.make()

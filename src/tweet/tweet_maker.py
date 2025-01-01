@@ -1,7 +1,10 @@
-import os
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+
 import random
 from pydantic import BaseModel
-from openai_adapter import OpenAIAdapter
+from api.openai_adapter import OpenAIAdapter
 from dotenv import load_dotenv
 import tweepy
 
@@ -31,7 +34,7 @@ class TweetMaker:
 
     def __create_tweet_text(self) -> Tweet:
         system_prompt = open(
-            self.FILE_PATH+"/storage/make_daily_tweet_prompt.txt", "r", encoding="utf-8").read()
+            "docs/make_daily_tweet_prompt.txt", "r", encoding="utf-8").read()
         theme = self.__select_theme()
         user_prompt = f"テーマ:{theme}"
         messages = [self.adapter.create_message(
@@ -41,7 +44,7 @@ class TweetMaker:
 
     def __select_theme(self) -> str:
         themes: list[str] = open(
-            self.FILE_PATH+"/storage/tweet_theme.txt", "r", encoding="utf-8").readlines()
+            "docs/tweet_theme.txt", "r", encoding="utf-8").readlines()
         return random.choice(themes)
 
     def post(self):

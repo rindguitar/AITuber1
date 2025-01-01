@@ -1,8 +1,12 @@
-from openai_adapter import OpenAIAdapter
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+
+from api.openai_adapter import OpenAIAdapter
 
 adapter = OpenAIAdapter()
 
-with open("storage/diary_maker_prompt.txt", "r", encoding="utf-8") as f:
+with open("docs/diary_maker_prompt.txt", "r", encoding="utf-8") as f:
     system_prompt = f.read()
     
 # ここをあとで一日生成機で作成する

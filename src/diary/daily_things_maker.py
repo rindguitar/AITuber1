@@ -1,6 +1,10 @@
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+
 import random
 from pydantic import BaseModel
-from openai_adapter import OpenAIAdapter
+from api.openai_adapter import OpenAIAdapter
 
 
 class Event(BaseModel):
@@ -20,7 +24,7 @@ def load_random_events() -> list[Event]:
     ]
     events = []
     for event in event_list:
-        with open(f"storage/daily_things_words/{event['file_name']}.txt", "r", encoding="utf-8") as f:
+        with open(f"docs/daily_things_words/{event['file_name']}.txt", "r", encoding="utf-8") as f:
             random_event = random.choice(f.read().splitlines())
             events.append(
                 Event(file_name=event["file_name"], place=event["place"], thing=random_event))
@@ -30,7 +34,7 @@ def load_random_events() -> list[Event]:
 class DailyThingsMaker:
     def make() -> str:
         events = load_random_events()
-        with open("storage/daily_things_make_prompt.txt", "r", encoding="utf-8") as f:
+        with open("docs/daily_things_make_prompt.txt", "r", encoding="utf-8") as f:
             system_prompt = f.read()
             
         adapter = OpenAIAdapter()

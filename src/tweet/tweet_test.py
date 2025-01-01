@@ -1,6 +1,7 @@
 import os
 import dotenv
 import tweepy
+import tweepy.errors
 
 dotenv.load_dotenv()
 
@@ -27,5 +28,5 @@ tweet = "これはAITuber本のテストポストです"
 try:
     api.create_tweet(text=tweet)
     print("ポストの投稿に成功しました！")
-except tweepy.TweepError as e:
+except tweepy.errors.TweepyException as e:
     print(f"エラーが発生しました: {e}")
