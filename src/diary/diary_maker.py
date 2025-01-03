@@ -1,3 +1,5 @@
+# キャラクターの日記を生成し自動的に投稿をするプログラムです。
+
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 

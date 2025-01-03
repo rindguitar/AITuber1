@@ -1,3 +1,5 @@
+# はてなブログから、自分のアカウントにあらかじめ投稿しておいた記事のリストを取得できるかテストするプログラムです。
+
 import feedparser
 import requests
 from requests.auth import HTTPBasicAuth

@@ -1,3 +1,5 @@
+# LLMを介さずに、投稿をテストするプログラムです。
+
 import os
 import dotenv
 import tweepy

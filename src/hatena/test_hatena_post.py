@@ -1,3 +1,5 @@
+# はてなブログに記事を投稿できるかテストするプログラムです。
+
 import requests
 from requests.auth import HTTPBasicAuth
 import dotenv

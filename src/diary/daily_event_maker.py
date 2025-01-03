@@ -1,3 +1,5 @@
+# 一日の出来事を生成するモジュールのプログラムです。
+
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
