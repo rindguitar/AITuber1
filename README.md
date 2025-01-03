@@ -18,20 +18,34 @@ AITuberKit
 
 ## インストール方法
 
-インストール方法を書いてください。
-以下のようなコマンドを書くなどすると手順がわかりやすくなるでしょう。
-
+1. リポジトリをローカルにクローンしてください。
 ```
-make install
+git clone https://github.com/rindguitar/AITuber1.git
 ```
+2. ファイルを開いてください。
+```
+cd AITuber1
+```
+3. パッケージのインストールをしてください。
+```
+$ pip install -r requirements.txt
+```
+完了したら下記の使い方に従い、使用を始めてください。
 
 ## 使い方
 
-1. OpenAIのAPIキー、XのConsumerKeysのAPIキー、XのConsumerKeysのAPIキーSecret、
-XのBearerToken、XのAccessToken、XのAccessTokenSecret、はてなアカウントのID、
-はてなのルートエンドポイントのURL、はてなのAPIキーを取得。
+1. 下記のAPIキーなどを取得。
+-OpenAIのAPIキー
+-XのConsumerKeysのAPIキー
+-XのConsumerKeysのAPIキーSecret
+-XのBearerToken
+-XのAccessToken
+-XのAccessTokenSecret
+-はてなアカウントのID
+-はてなのルートエンドポイントのURL
+-はてなのAPIキー
 
-2. .envファイルを下記のように作成。
+2. .envファイルを下記のように作成。  
 ※ ダブルクォーテーション内に、1.で取得したものをそれぞれ書き込んでください。
 ```
 OPENAI_API_KEY="OpenAIのAPIキー"
@@ -47,9 +61,10 @@ HATENA_BLOG_ID="はてなのルートエンドポイントのURL"
 HATENA_KEY="はてなのAPIキー"
 ```
 
-3. docsディレクトリ内の、Character settingをはじめとした全てのファイルの内容を、既述を基に自分の好きなように編集。
-※ daily_things_words内のファイルの名称を変更した際は、一部コードの書き換えが必要になります。
+3. docsディレクトリ内の、Character settingをはじめとした全てのファイルの内容を、既述を基に自分の好きなように編集。  
+※ daily_things_words内のファイルの名称を変更した際は、一部コードの書き換えが必要になります。  
 例： src/diary/daily_things_maker.py
+
      ```
      def load_random_events() -> list[Event]:
             event_list = [
@@ -61,15 +76,14 @@ HATENA_KEY="はてなのAPIキー"
         {"file_name": "home", "place": "家"}
         ]
      ```
-
-4. あとはプログラムを実行するのみ！
+4. あとはプログラムを実行するのみ！  
 ※ プログラム内に、そのプログラムの概要説明を記載しております。
 
 ## その他
 
 tweet_themeはCharacter settingをLLMに入力し、出力を手伝ってもらうことをオススメします。
 
-daily_things_words内のファイルには、一日の時系列でキャラクターがいそうな場所を定義し、
+daily_things_words内のファイルには、一日の時系列でキャラクターがいそうな場所を定義し、  
 その場所ごとで起こりそうな出来事やキャラクターの思考、言動をLLMに単語や短文で出力してもらったものを記載してください。
-
+  
 私はプログラムを書いてまとめただけなので細かな意図などは、書籍「AITuberを作ってみたらプロンプトエンジニアリングがよくわかった件」を読んでいただけると分かると思います。
