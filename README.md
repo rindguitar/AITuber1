@@ -35,15 +35,15 @@ $ pip install -r requirements.txt
 ## 使い方
 
 1. 下記のAPIキーなどを取得。
-     *OpenAIのAPIキー
-     *XのConsumerKeysのAPIキー
-     *XのConsumerKeysのAPIキーSecret
-     *XのBearerToken
-     *XのAccessToken
-     *XのAccessTokenSecret
-     *はてなアカウントのID
-     *はてなのルートエンドポイントのURL
-     *はてなのAPIキー
+- OpenAIのAPIキー
+- XのConsumerKeysのAPIキー
+- XのConsumerKeysのAPIキーSecret
+- XのBearerToken
+- XのAccessToken
+- XのAccessTokenSecret
+- はてなアカウントのID
+- はてなのルートエンドポイントのURL
+- はてなのAPIキー
 
 2. .envファイルを下記のように作成。  
 ※ ダブルクォーテーション内に、1.で取得したものをそれぞれ書き込んでください。
