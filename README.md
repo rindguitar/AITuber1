@@ -7,9 +7,9 @@ AITuberKit
 このプロジェクトは、書籍「AITuberを作ってみたらプロンプトエンジニアリングがよくわかった件」を基に開発した、AITuberを始めるためのキットです。
 機能は主に3つあります。
 
-- 1. キャラクターによるX(旧Twitter)への投稿
-- 2. キャラクターの一日の出来事を生成、日記にし、はてなブログへ投稿
-- 3. キャラクターによる、YouTube配信でのコメントへの返答　現在未実装
+1. キャラクターによるX(旧Twitter)への投稿
+2. キャラクターの一日の出来事を生成、日記にし、はてなブログへ投稿
+3. キャラクターによる、YouTube配信でのコメントへの返答　現在未実装
 
 ## 開発環境
 
@@ -27,12 +27,12 @@ make install
 
 ## 使い方
 
-- 1. OpenAIのAPIキー、XのConsumerKeysのAPIキー、XのConsumerKeysのAPIキーSecret、
-     XのBearerToken、XのAccessToken、XのAccessTokenSecret、はてなアカウントのID、
-     はてなのルートエンドポイントのURL、はてなのAPIキーを取得。
+1. OpenAIのAPIキー、XのConsumerKeysのAPIキー、XのConsumerKeysのAPIキーSecret、
+XのBearerToken、XのAccessToken、XのAccessTokenSecret、はてなアカウントのID、
+はてなのルートエンドポイントのURL、はてなのAPIキーを取得。
 
-- 2. .envファイルを下記のように作成。
-     ※ ダブルクォーテーション内に先ほど取得したものを書き込んでください。
+2. .envファイルを下記のように作成。
+※ ダブルクォーテーション内に、1.で取得したものをそれぞれ書き込んでください。
 ```
 OPENAI_API_KEY="OpenAIのAPIキー"
 Client_ID=""
@@ -47,9 +47,9 @@ HATENA_BLOG_ID="はてなのルートエンドポイントのURL"
 HATENA_KEY="はてなのAPIキー"
 ```
 
-- 3. ディレクトリdocs内の、Character settingをはじめとした全てのファイルの内容を、既述を基に自分の好きなように編集。
-     ※ daily_things_words内のファイルの名称を変更した際は、一部コードの書き換えが必要になります。
-     例： daily_things_maker.py
+3. ディレクトリdocs内の、Character settingをはじめとした全てのファイルの内容を、既述を基に自分の好きなように編集。
+※ daily_things_words内のファイルの名称を変更した際は、一部コードの書き換えが必要になります。
+例： daily_things_maker.py
      ```
      def load_random_events() -> list[Event]:
             event_list = [
@@ -62,7 +62,7 @@ HATENA_KEY="はてなのAPIキー"
         ]
      ```
 
-- 4. あとはコードを実行するのみ！
-     ※ コード内に、そのコードの概要説明を記載しております。
+4. あとはコードを実行するのみ！
+※ コード内に、そのコードの概要説明を記載しております。
 
 ## その他
