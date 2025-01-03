@@ -4,7 +4,7 @@ AITuberKit
 
 ## 概要
 
-このプロジェクトは、書籍「AITuberを作ってみたらプロンプトエンジニアリングがよくわかった件」を基に開発した、AITuberを始めるためのキットです。
+このプロジェクトは、書籍「AITuberを作ってみたらプロンプトエンジニアリングがよくわかった件」を基に開発した、AITuberを始めるためのキットです。  
 機能は主に3つあります。
 
 1. キャラクターによるX(旧Twitter)への投稿
@@ -35,15 +35,15 @@ $ pip install -r requirements.txt
 ## 使い方
 
 1. 下記のAPIキーなどを取得。
--OpenAIのAPIキー
--XのConsumerKeysのAPIキー
--XのConsumerKeysのAPIキーSecret
--XのBearerToken
--XのAccessToken
--XのAccessTokenSecret
--はてなアカウントのID
--はてなのルートエンドポイントのURL
--はてなのAPIキー
+     *OpenAIのAPIキー
+     *XのConsumerKeysのAPIキー
+     *XのConsumerKeysのAPIキーSecret
+     *XのBearerToken
+     *XのAccessToken
+     *XのAccessTokenSecret
+     *はてなアカウントのID
+     *はてなのルートエンドポイントのURL
+     *はてなのAPIキー
 
 2. .envファイルを下記のように作成。  
 ※ ダブルクォーテーション内に、1.で取得したものをそれぞれ書き込んでください。
