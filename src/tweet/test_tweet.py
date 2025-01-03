@@ -1,3 +1,5 @@
+# LLMが出力するツイートを取得するテストプログラムです。
+
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 

@@ -1,3 +1,5 @@
+# 記事投稿用のXMLデータを作るAtomEntryクラスを作るプログラムです。
+
 from xml.etree.ElementTree import Element, SubElement, tostring
 
 

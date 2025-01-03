@@ -1,3 +1,5 @@
+# 日記を生成するコードでプロンプトを評価するためのプログラムです。
+
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
@@ -9,7 +11,7 @@ adapter = OpenAIAdapter()
 with open("docs/diary_maker_prompt.txt", "r", encoding="utf-8") as f:
     system_prompt = f.read()
     
-# ここをあとで一日生成機で作成する
+# ここをあとで一日生成機で作成する。クォーテーション内を自分のキャラクターに合わせて編集してください。
 user_prompt = """
 家→ジム:冬の冷たい風に頬を撫でられながら、ジムへの道のりを辿り、それぞれの街の変化と時間の経過を思い出深く感じた。
 ジム:とくになし
