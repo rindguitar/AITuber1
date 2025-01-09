@@ -11,7 +11,7 @@ class VoiceIO(TypedDict):
 
 
 class PlaySound:
-    def __init__(self, output_device_name="CABLEInput") -> None:
+    def __init__(self, output_device_name="CABLE Input") -> None:
         # 指定された出力デバイス名に基づいてデバイスIDを取得
         output_device_id = self._search_output_device_id(output_device_name)
         # 入力デバイスIDは使用しないため、デフォルトの0を設定
