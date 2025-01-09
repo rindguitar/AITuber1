@@ -51,7 +51,7 @@ class VoicevoxAdapter:
         print(res.status_code)
         return res.content
     def get_voice(self, text: str) -> VoiceIO:
-        speaker_id = 96 # 「中部つるぎ」のspeaker_id
+        speaker_id = 94 # 「中部つるぎ」のspeaker_id
         query_data: json = self.__create_audio_query(text, speaker_id=speaker_id)
         query_data["speedScale"] = 1.0 # VOICEVOXでは0.50 ~ 2.00の範囲で指定できる
         query_data["pitchScale"] = 0.05 # VOICEVOXでは-0.15 ~ 0.15の範囲で指定できる
