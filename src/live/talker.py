@@ -1,4 +1,4 @@
-# 発言内容を生成するためのTalkerクラスを定義するプログラムです。
+# 発言内容を生成するためのTalkerクラスを定義するプログラムです。このプログラムを編集することで、コメントがない場面での話す内容が増えます。
 
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
