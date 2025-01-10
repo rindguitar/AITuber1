@@ -86,6 +86,8 @@ YOUTUBE_VIDEO_ID="配信のVideoID"
 
 ## その他
 
+OBSAdapter.pyはOBS、VoiceMaker.pyはVOICEVOX、AITuberSystem.pyはOBSとVOICEVOXの両方を起動しないとエラーが発生します。
+
 tweet_themeはCharacter settingをLLMに入力し、出力を手伝ってもらうことをオススメします。
 
 daily_things_words内のファイルには、一日の時系列でキャラクターがいそうな場所を定義し、  
