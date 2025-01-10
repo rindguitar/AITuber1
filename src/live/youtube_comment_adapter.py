@@ -29,7 +29,12 @@ class YoutubeCommentAdapter:
 
 if __name__ == "__main__":
     import time
-    video_id = "任意のvideo_id"
+    import os
+    import dotenv
+    
+    dotenv.load_dotenv()
+    
+    video_id = os.getenv('YOUTUBE_VIDEO_ID')
     chat = YoutubeCommentAdapter(video_id)
     time.sleep(1) # コメント取得のために少し待つ
     print(chat.get_comment())
