@@ -9,7 +9,7 @@ AITuberKit
 
 1. キャラクターによるX(旧Twitter)への投稿
 2. キャラクターの一日の出来事を生成、日記にし、はてなブログへ投稿
-3. キャラクターによる、YouTube配信でのコメントへの返答　現在未実装
+3. キャラクターによる、YouTube配信でのコメントへの返答
 
 ## 開発環境
 
@@ -44,13 +44,14 @@ $ pip install -r requirements.txt
 - はてなアカウントのID
 - はてなのルートエンドポイントのURL
 - はてなのAPIキー
+- OBSのサーバーパスワード
+- OBSのサーバーポート
+- YouTube配信のVideoID　配信を変えるごとに都度変化。
 
 2. .envファイルを下記のように作成。  
 ※ ダブルクォーテーション内に、1.で取得したものをそれぞれ書き込んでください。
 ```
 OPENAI_API_KEY="OpenAIのAPIキー"
-Client_ID=""
-Client_Secret=""
 CONSUMER_KEY="XのConsumerKeysのAPIキー"
 CONSUMER_SECRET="XのConsumerKeysのAPIキーSecret"
 BEARER_TOKEN="XのBearerToken"
@@ -59,6 +60,10 @@ ACCESS_TOKEN_SECRET="XのAccessTokenSecret"
 HATENA_ID="はてなアカウントのID"
 HATENA_BLOG_ID="はてなのルートエンドポイントのURL"
 HATENA_KEY="はてなのAPIキー"
+OBS_WS_PASSWORD="OBSのサーバーパスワード"
+OBS_WS_HOST="localhost"
+OBS_WS_PORT="OBSのサーバーポート"
+YOUTUBE_VIDEO_ID="配信のVideoID"
 ```
 
 3. docsディレクトリ内の、Character settingをはじめとした全てのファイルの内容を、既述を基に自分の好きなように編集。  
@@ -80,6 +85,8 @@ HATENA_KEY="はてなのAPIキー"
 ※ プログラム内に、そのプログラムの概要説明を記載しております。
 
 ## その他
+
+OBSAdapter.pyはOBS、VoiceMaker.pyはVOICEVOX、AITuberSystem.pyはOBSとVOICEVOXの両方を起動しないとエラーが発生します。
 
 tweet_themeはCharacter settingをLLMに入力し、出力を手伝ってもらうことをオススメします。
 
