@@ -1,5 +1,3 @@
-# LLMを介さずに、投稿をテストするプログラムです。
-
 import os
 import dotenv
 import tweepy
@@ -10,7 +8,7 @@ dotenv.load_dotenv()
 # APIキーとアクセストークン
 consumer_key = os.getenv("CONSUMER_KEY")
 consumer_secret = os.getenv("CONSUMER_SECRET")
-bearer_token = os.getenv("BEARER_TOKEN")
+bearer_token = os.getenv("BESRER_TOKEN")
 access_token = os.getenv("ACCESS_TOKEN")
 access_token_secret = os.getenv("ACCESS_TOKEN_SECRET")
 

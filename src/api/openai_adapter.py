@@ -1,5 +1,3 @@
-# OpenAIのAPIにプロンプトを送り、出力を受け取るアダプターです。
-
 import os
 from typing import Literal, TypedDict, Type
 import dotenv

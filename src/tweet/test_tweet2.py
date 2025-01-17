@@ -1,5 +1,3 @@
-# docsディレクトリに保存したtweet_themeからいずれか1つをランダムに選ぶテストプログラムです。
-
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 

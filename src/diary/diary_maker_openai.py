@@ -1,5 +1,3 @@
-# 一日の出来事とそれに基づく日記を自動生成するプログラムです。
-
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 

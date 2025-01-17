@@ -1,5 +1,3 @@
-# キャラクターの設定などから生み出したテーマをもとに、つぶやきをLLMに生成させ、それをXに投稿するプログラムです。
-
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
@@ -25,7 +23,7 @@ class TweetMaker:
     def __init__(self):
         consumer_key = os.environ.get("CONSUMER_KEY")
         consumer_secret = os.environ.get("CONSUMER_SECRET")
-        bearer_token = os.environ.get("BEARER_TOKEN")
+        bearer_token = os.environ.get("BESRER_TOKEN")
         access_token = os.environ.get("ACCESS_TOKEN")
         access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
         # APIインスタンスの作成
