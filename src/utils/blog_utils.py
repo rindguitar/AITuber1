@@ -44,3 +44,7 @@ class BlogUtils:
         except Exception as e:
             print(f'Failed to post: {response.status_code}')
             raise e
+
+if __name__ == "__main__":
+    blog_utils = BlogUtils()
+    print(blog_utils.read_latest_blog())
