@@ -57,7 +57,8 @@ class Talker:
         return response
     
     def generate_about_diary(self) -> str:
-        latest_diary = BlogUtils()
+        read_diary = BlogUtils()
+        latest_diary = read_diary.read_latest_blog()
         prompt = f"""
             あなたは以下の日記の筆者です。
             以下の日記内の出来事について、何があったのか、どういう思いだったのか短い文を作ってください:
