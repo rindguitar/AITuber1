@@ -8,6 +8,7 @@ from youtube_comment_adapter import YoutubeCommentAdapter
 from PlaySound import PlaySound
 from dotenv import load_dotenv
 import time
+import random
 load_dotenv(override=True)
 
 
@@ -24,8 +25,9 @@ class AItuberSystem:
         while True:
             comment = self.youtubr_comment_adapter.get_comment()
             if comment is None:
-                # おとぎ話を話す
-                talk = self.talker.generate_fairy_tale()
+                # talker.pyの話題からランダムに話す
+                generater = [self.talker.generate_fairy_tale(), self.talker.generate_about_diary()]
+                talk = random.choice(generater)
                 talk_list = self.split_text(talk)
                 for talk in talk_list:
                     voice: VoiceIO = self.voice_maker.make_voice_voicevox(talk)

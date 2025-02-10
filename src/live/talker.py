@@ -5,6 +5,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 import random
 from api.openai_adapter import OpenAIAdapter
+from utils.blog_utils import BlogUtils
 
 
 class Talker:
@@ -54,9 +55,23 @@ class Talker:
         response = self.chat(prompt)
         print(response)
         return response
-
+    
+    def generate_about_diary(self) -> str:
+        read_diary = BlogUtils()
+        latest_diary = read_diary.read_latest_blog()
+        prompt = f"""
+            あなたは以下の日記の筆者です。
+            以下の日記内の出来事について、何があったのか、どういう思いだったのか短い文を作ってください:
+            日記: {latest_diary}
+            
+            文は200文字程度で、キャラクターの個性を反映させてください。
+            """
+        response = self.chat(prompt)
+        print(response)
+        return response
 
 if __name__ == "__main__":
     talker = Talker()
     print(talker.generate_fairy_tale())
     print(talker.chat("さっきの童話面白かったな、君があの童話で好きなところある？"))
+    print(talker.generate_about_diary())
