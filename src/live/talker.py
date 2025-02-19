@@ -69,9 +69,20 @@ class Talker:
         response = self.chat(prompt)
         print(response)
         return response
-
+    
+    def drinker_common_things(self) -> str:
+        prompt = f"""
+            キャラクターになりきって、酒をよく飲む人のあるあるを2個程列挙し、
+            そのあるあるの説明を100文字程度で話してください。
+            あるあるを列挙する前に必ず「コメントが無いから、酒飲みのあるあるをちょっと話すぜ」とつけてください。
+            """
+        response = self.chat(prompt)
+        print(response)
+        return response
+    
 if __name__ == "__main__":
     talker = Talker()
     print(talker.generate_fairy_tale())
     print(talker.chat("さっきの童話面白かったな、君があの童話で好きなところある？"))
     print(talker.generate_about_diary())
+    print(talker.drinker_common_things())

@@ -26,7 +26,8 @@ class AItuberSystem:
             comment = self.youtubr_comment_adapter.get_comment()
             if comment is None:
                 # talker.pyの話題からランダムに話す
-                generater = [self.talker.generate_fairy_tale(), self.talker.generate_about_diary()]
+                generater = [self.talker.generate_fairy_tale(), self.talker.generate_about_diary(), 
+                             self.talker.drinker_common_things()]
                 talk = random.choice(generater)
                 talk_list = self.split_text(talk)
                 for talk in talk_list:
