@@ -80,9 +80,20 @@ class Talker:
         print(response)
         return response
     
+    def my_theory_about_music(self) -> str:
+        prompt = f"""
+            キャラクターになりきって、ロック、パンク、メタルという音楽についての持論を200文字程度で話してください。
+            話始める前に必ず「お前たちは好きな音楽のジャンルはあるか？私はロック、パンク、メタルが好きなんだが、私の音楽に対する持論を話すぜ」
+            とつけてください。
+            """
+        response = self.chat(prompt)
+        print(response)
+        return response
+    
 if __name__ == "__main__":
     talker = Talker()
     print(talker.generate_fairy_tale())
     print(talker.chat("さっきの童話面白かったな、君があの童話で好きなところある？"))
     print(talker.generate_about_diary())
     print(talker.drinker_common_things())
+    print(talker.my_theory_about_music())

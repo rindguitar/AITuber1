@@ -27,7 +27,7 @@ class AItuberSystem:
             if comment is None:
                 # talker.pyの話題からランダムに話す
                 generater = [self.talker.generate_fairy_tale(), self.talker.generate_about_diary(), 
-                             self.talker.drinker_common_things()]
+                             self.talker.drinker_common_things(), self.talker.my_theory_about_music()]
                 talk = random.choice(generater)
                 talk_list = self.split_text(talk)
                 for talk in talk_list:
