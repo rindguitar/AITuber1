@@ -7,7 +7,6 @@ import random
 from api.openai_adapter import OpenAIAdapter
 from utils.blog_utils import BlogUtils
 
-
 class Talker:
     def __init__(self):
         self.talk_history: list[dict[str, str]] = []
@@ -90,10 +89,35 @@ class Talker:
         print(response)
         return response
     
+    def expand_previous_topic(self, previous_talk: str) -> str:    
+        if previous_talk is None:
+            # 前回の発言がない場合は、他の話題を生成
+            methods = [
+                self.generate_fairy_tale,
+                self.generate_about_diary,
+                self.drinker_common_things,
+                self.my_theory_about_music
+            ]
+            return random.choice(methods)()
+            
+        prompt = f"""
+            一つ前の発言の内容を基に、続きの話を広げてください:
+            一つ前の内容: {previous_talk}
+            
+            文字数は200文字程度で、キャラクターの個性を反映させてください。
+            話を始める前に「さっきの話の続きを話すぜ」とつけてください。
+            """
+        response = self.chat(prompt)
+        print(response)
+        return response
+    
 if __name__ == "__main__":
     talker = Talker()
-    print(talker.generate_fairy_tale())
-    print(talker.chat("さっきの童話面白かったな、君があの童話で好きなところある？"))
-    print(talker.generate_about_diary())
-    print(talker.drinker_common_things())
-    print(talker.my_theory_about_music())
+    print(
+        f"{talker.generate_fairy_tale()}\n"
+        f"{talker.chat('さっきの童話面白かったな、君があの童話で好きなところある？')}\n"
+        f"{talker.generate_about_diary()}\n"
+        f"{talker.drinker_common_things()}\n"
+        f"{talker.my_theory_about_music()}\n"
+        f"{talker.expand_previous_topic(talker.talk_history[-1]['content'])}"
+    )
