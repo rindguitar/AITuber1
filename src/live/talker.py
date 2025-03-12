@@ -15,6 +15,7 @@ class Talker:
 
     def chat(self, message):
         adapter = OpenAIAdapter()
+        print(f"💬message: {message}")
         self.talk_history.append({"role": "user", "content": message})
         # 過去3やり取りまで参照する
         if len(self.talk_history) > 3:
@@ -24,6 +25,7 @@ class Talker:
         res = adapter.chat_completions([adapter.create_message(
             "system", self.system_prompt), *talk_history])
         self.talk_history.append({"role": "assistant", "content": res})
+        print(f"💬response: {res}")
         return res
     
     def _generate_story_elements(self):
@@ -90,6 +92,7 @@ class Talker:
         return response
     
     def expand_previous_topic(self, previous_talk: str) -> str:    
+        print(f"💬previous_talk: {previous_talk}")
         if previous_talk is None:
             # 前回の発言がない場合は、他の話題を生成
             methods = [
@@ -107,6 +110,7 @@ class Talker:
             文字数は200文字程度で、キャラクターの個性を反映させてください。
             話を始める前に「さっきの話の続きを話すぜ」とつけてください。
             """
+        print(f"💬prompt: {prompt}")
         response = self.chat(prompt)
         print(response)
         return response
